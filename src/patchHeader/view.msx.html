@@ -1,0 +1,73 @@
+<div class="patch-header">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="btn-group" role="group">
+        <button type="button"
+                class={$ctrl.setClass({
+                  "btn": true,
+                  "btn-success": $ctrl.patchEntry.is_enabled(),
+                  "btn-default": !$ctrl.patchEntry.is_enabled()
+                })}
+                onclick={$ctrl.patchEntry.toggleEnabled}>
+          <i class={$ctrl.setClass({
+                  "fa": true,
+                  "fa-toggle-on": $ctrl.patchEntry.is_enabled(),
+                  "fa-toggle-off": !$ctrl.patchEntry.is_enabled()
+                })}></i>
+        </button>
+
+        <button type="button"
+                class="btn btn-default"
+                onclick={$ctrl.patchEntry.toggleHideChildren}>
+          <i class={$ctrl.setClass({
+            fa: true,
+            "fa-eye": !$ctrl.patchEntry._are_children_hidden(),
+            "fa-eye-slash": $ctrl.patchEntry._are_children_hidden()
+          })}></i>
+        </button>
+
+        <button type="button"
+                class="btn btn-default"
+                onclick={$ctrl.patchEntry.toggleContainerType}>
+          <i class={$ctrl.setClass({
+            fa: true,
+            "fa-list": $ctrl.patchEntry.is_container_type(),
+            "fa-angle-double-right": !$ctrl.patchEntry.is_container_type()
+          })}></i>
+        </button>
+      </div>
+      <div class="inline-group">
+        <button type="button"
+                class="btn btn-danger"
+                onclick={$ctrl.deleteEntry}>
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+      <div class="inline-group description">
+        <div class="input-group">
+          <span class="input-group-addon">
+            Description
+          </span>
+          <input class="form-control"
+                type="text"
+                id={`description-${$ctrl.patchId}`}
+                placeholder="Description"
+                value={$ctrl.patchEntry.desc()}
+                onchange={m.withAttr("value", $ctrl.patchEntry.desc)}/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show children if container type -->
+  {$ctrl.patchEntry._are_children_hidden() ?
+    <div class="hidden"></div>
+  :
+    ( $ctrl.patchEntry.is_container_type() ?
+      <$ctrl.patchList list={$ctrl.patchEntry.children}/> :
+      <!-- Show value + offset if not -->
+      <$ctrl.patchBody entry={$ctrl.patchEntry} patchId={$ctrl.patchId}/>
+    )
+  }
+</div>
+

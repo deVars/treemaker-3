@@ -1,0 +1,18 @@
+.entry-value-fields-hidden {
+  display: none;
+}
+
+.entry-value-fields {
+  padding: 0px 0 8px 0;
+
+  & .offset {
+    display: flex;
+
+    & .address {
+      width: 6rem;
+    }
+    & .value {
+      margin-left: 32px;
+    }
+  }
+}

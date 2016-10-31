@@ -1,0 +1,60 @@
+.app {
+  height: calc(100vh);
+
+  & .pe-toolbar {
+    background-color: transparent;
+  }
+
+  & .pe-header-panel__header-container {
+    background-color: var(--primary-color-1);
+  }
+
+  & .header-panel .header-panel--title-bar {
+    align-items: center;
+    display: flex;
+    color: white;
+    width: 100%;
+
+    &__text {
+      margin-left: 64px;
+    }
+
+    & .pe-button.pe-button--icon {
+      color: color(white a(56%));
+    }
+  }
+
+  & .header-tabs {
+    & .pe-tabs__row {
+      background-color: var(--primary-color-1);
+      color: white;
+    }
+    & .pe-tabs__tab.pe-button--selected {
+      color: var(--accent-color);
+    }
+    & .pe-tabs__indicator {
+      background-color: var(--accent-color);
+    }
+  }
+
+  & .pe-header-panel__main-container .content {
+    height: calc(100vh - 64px - 48px - 16px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 8px 8px 8px 8px;
+  }
+
+  & .export-group {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  & .pe-textfield.pe-textfield--focused {
+    color: var(--primary-color-1);
+  }
+
+  & .pe-control.pe-control--regular .pe-button__label {
+    height: initial;
+    width: initial;
+  }
+}

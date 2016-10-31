@@ -1,0 +1,13 @@
+.patch-header {
+  border-left: rgba(217, 217, 217, 0.5) 1px outset;
+
+  & .description {
+    vertical-align: middle;
+    width: calc(100% - 175px);
+  }
+
+  & .inline-group {
+    display: inline-block;
+    margin-left: 8px;
+  }
+}

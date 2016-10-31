@@ -1,0 +1,15 @@
+.edit-entries-tab {
+  & .description {
+    display: inline-block;
+    margin-left: 16px;
+  }
+
+  & .patch-entry--header {
+    display: flex;
+  }
+
+  & .patch-entry--body {
+    border-left: 1px solid var(--gray-3);
+    padding-left: 32px;
+  }
+}

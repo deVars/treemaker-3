@@ -1,0 +1,22 @@
+<div class="row patch-list">
+  <div class="col-md-12">
+  {$ctrl.list.map(
+    (entry, index, array) => (
+      <$ctrl.patchHeader entry={entry}
+                         index={index}
+                         list={array}/>
+    )
+  )}
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+        <div class="col-md-1">
+          <button type="button"
+                  class="btn btn-default"
+                  onclick={$ctrl.addEntry}>
+            <span class="fa fa-plus-circle" aria-hidden="true"></span>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>

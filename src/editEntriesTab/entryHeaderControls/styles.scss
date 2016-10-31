@@ -1,0 +1,18 @@
+.entry-header-controls {
+  display: inline-block;
+
+  & .pe-control--switch.pe-control--on .pe-control--switch__track {
+      background-color: color(var(--primary-color-1) s(50%));
+  }
+  & .pe-control--switch.pe-control--on .pe-control--switch__thumb {
+      color: var(--primary-color-1);
+  }
+
+  & .pe-button.pe-button--icon.colored {
+    color: var(--primary-color-1);
+  }
+
+  & .set-width {
+    width: 40px;
+  }
+}

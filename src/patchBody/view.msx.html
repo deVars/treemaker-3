@@ -1,0 +1,44 @@
+<div>
+  <div class="row">
+    <div class="col-xs-5 col-sm-3">
+      <div class="input-group offset">
+        <span class="input-group-addon">
+          Offset
+        </span>
+        <input class="form-control offset"
+               type="text"
+               id={`offset-${$ctrl.patchId}`}
+               placeholder="Offset"
+               pattern="[0-9A-Fa-f]+"
+               maxlength="6"
+               value={$ctrl.patchEntry.offset()}
+               onchange={m.withAttr("value", $ctrl.patchEntry.offset)}/>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="input-group value">
+        <span class="input-group-addon">
+          Value
+        </span>
+        <input class="form-control value"
+               type="text"
+               id={`value-${$ctrl.patchId}`}
+               placeholder="Value"
+               pattern="[0-9A-Fa-f]+"
+               value={$ctrl.patchEntry.value()}
+               onchange={m.withAttr("value", $ctrl.patchEntry.value)}/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="well">
+        {
+          $ctrl.patchEntry.value() ?
+            $ctrl.patchEntry.value().replace(/([0-9A-Fa-f]{1,2})/g, "$1 ") :
+            "N/A"
+        }
+      </div>
+    </div>
+  </div>
+</div>
