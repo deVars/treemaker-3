@@ -1,0 +1,11 @@
+.tools-tab {
+  display: flex;
+
+  & .tools-tab--links:hover {
+    background-color: var(--primary-color-2);
+  }
+
+  & .tools-tab--tool {
+    padding: 16px;
+  }
+}

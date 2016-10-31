@@ -9,5 +9,6 @@ const BODY:Element = window.document.body
 m.route.mode = "hash"
 m.route(BODY, `/`, {
   '/': App,
-  '/:name': App
+  '/:name': App,
+  '/:name/:sub...': App
 })
