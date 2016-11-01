@@ -33,6 +33,7 @@ let config = {
           getFontLoaders(),
           getCSSLoaders(),
           getTSLoaders(),
+          getJSLoaders(),
           getJSONLoaders()
         ]
       },
@@ -100,7 +101,14 @@ function getTSLoaders() {
   return {
     test: /\.ts$/,
     exclude: /node_modules/,
-    loaders: ['ts']
+    loaders: ['mithril-objectify', 'ts']
+  };
+}
+
+function getJSLoaders() {
+  return {
+    test: /\.js$/,
+    loaders: ['mithril-objectify']
   };
 }
 

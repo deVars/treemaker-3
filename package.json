@@ -32,6 +32,7 @@
     "jshint-loader": "^0.8.3",
     "json-loader": "^0.5.4",
     "mithril": "^0.2.5",
+    "mithril-objectify-loader": "0.0.1",
     "normalize.css": "^5.0.0",
     "polythene": "^0.2.31",
     "postcss": "^5.2.5",
