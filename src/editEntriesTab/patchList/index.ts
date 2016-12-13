@@ -20,6 +20,7 @@ function view(ctrl: Mithril.Controller, config: TabComponentConfig) {
     config.patchEntryData.map(
       (patchEntry, index, list) => (
         m(PatchListEntry, {
+          key: index,
           patchEntryData: patchEntry,
           patchList: list,
           patchIndex: index
